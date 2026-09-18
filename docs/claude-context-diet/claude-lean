@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Minimum-context Claude Code. Measured at ~2,925 tokens of initial context
+# versus 4,910 for settings-only barebones and ~10,700 for the stock config
+# (Claude Code 2.1.245). See README.md for the full ledger.
+#
+# Two flags, because neither has a settings.json equivalent:
+#
+#   --tools               keeps four tools; evicts every other schema, including
+#                         the ~600-token EndConversation policy text that shows
+#                         up interactively even when deny-listed.
+#   --system-prompt-file  replaces Anthropic's ~2,555 tokens of behavior prose
+#                         with prompt.md (~310 tokens). What that costs you is
+#                         measured by evals/run.sh -- run it after editing.
+#
+# Re-enable a tool by adding its name to --tools. Use plain `claude` for the
+# full-featured profile.
+# Resolve through symlinks, so this works when linked onto $PATH too.
+SELF="${BASH_SOURCE[0]}"
+while [ -L "$SELF" ]; do
+  T="$(readlink "$SELF")"
+  case "$T" in /*) SELF="$T" ;; *) SELF="$(dirname "$SELF")/$T" ;; esac
+done
+D="$(cd "$(dirname "$SELF")" && pwd)"
+exec /Users/benjamin/.local/bin/claude \
+  --tools "Bash,Read,Edit,Write" \
+  --system-prompt-file "$D/prompt.md" \
+  "$@"

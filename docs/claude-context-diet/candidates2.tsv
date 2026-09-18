@@ -1,0 +1,19 @@
+tools_none	flag	--tools ""
+tools_core4	flag	--tools "Bash,Read,Edit,Write"
+tools_core5	flag	--tools "Bash,Read,Edit,Write,Agent"
+exclude_dynamic	flag	--exclude-dynamic-system-prompt-sections
+safe_mode	flag	--safe-mode
+bare	flag	--bare
+git_instructions_off	setting	{"includeGitInstructions":false}
+skills_all_off	setting	{"skillOverrides":{"diagnosing-bugs":"off","tdd":"off","prototype":"off","research":"off","domain-modeling":"off","codebase-design":"off","code-review":"off","resolving-merge-conflicts":"off","wizard":"off","grilling":"off","writing-for-agents":"off"}}
+skills_keep_grilling	setting	{"skillOverrides":{"diagnosing-bugs":"off","tdd":"off","prototype":"off","research":"off","domain-modeling":"off","codebase-design":"off","code-review":"off","resolving-merge-conflicts":"off","wizard":"user-invocable-only","writing-for-agents":"off"}}
+plugin_off	setting	{"enabledPlugins":{}}
+deny_agents	setting	{"permissions":{"deny":["Task(claude-code-guide)","Task(statusline-setup)","Task(Plan)","Task(general-purpose)"]}}
+tool_search_auto	env	ENABLE_TOOL_SEARCH=auto
+tool_search_force	env	ENABLE_TOOL_SEARCH=force
+simple_system_prompt	env	CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=1
+git_instr_env	env	CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS=1
+no_claude_mds	env	CLAUDE_CODE_DISABLE_CLAUDE_MDS=1
+no_cron	env	CLAUDE_CODE_DISABLE_CRON=1
+no_todo	env	CLAUDE_CODE_ENABLE_TODO_TOOLS=0
+no_explore_plan	env	CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS=1

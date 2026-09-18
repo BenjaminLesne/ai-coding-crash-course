@@ -1,0 +1,174 @@
+{
+  // --- auth / env ---
+  "env": {
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
+    // "CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1",
+    // "CLAUDE_CODE_DISABLE_CRON": "1",
+    // "ENABLE_TODO_TOOLS": "0",
+    // "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": "1"
+  },
+  // "apiKeyHelper": "/bin/generate_temp_api_key.sh",
+  // "awsCredentialExport": "/path/to/export-aws-creds.sh",
+  // "awsAuthRefresh": "/path/to/refresh-aws.sh",
+  // "gcpAuthRefresh": "gcloud auth application-default login",
+  // "proxyAuthHelper": "/path/to/proxy-auth.sh",
+  // "otelHeadersHelper": "/path/to/otel-headers.sh",
+
+  // --- model ---
+  "model": "opus[1m]",
+  "effortLevel": "medium",
+  // "advisorModel": "claude-sonnet-5",
+  // "alwaysThinkingEnabled": false,
+  // "showThinkingSummaries": false,
+  // "fastMode": false,
+  // "fastModePerSessionOptIn": false,
+  // "switchModelsOnFlag": true,
+  // "autoContinueAtUsageLimit": false,
+  // "agent": "claude",
+
+  // --- permissions ---
+  "permissions": {
+    "deny": [
+      // "Bash",
+      // "Read",
+      // "Edit",
+      // "Write",
+      "Glob",
+      "Grep",
+      "NotebookEdit",
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "TodoWrite",
+      "TaskCreate",
+      "TaskUpdate",
+      "TaskGet",
+      "TaskList",
+      "TaskStop",
+      "Skill",
+      "REPL",
+      "AskUserQuestion",
+      "SendUserMessage",
+      "Agent",
+      "ListAgents",
+      "ShareOnboardingGuide",
+      "Artifact",
+      "Workflow",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "DesignSync",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "PushNotification",
+      "RemoteTrigger",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "EnterWorktree",
+      "ExitWorktree",
+      "Monitor",
+      "TaskOutput",
+      "SendMessage",
+      "EndConversation",
+      "BashOutput",
+      "KillShell"
+    ]
+    // "allow": ["Bash(npm run build)", "Read(~/.zshrc)"],
+    // "ask": ["Bash(git push:*)"],
+    // "defaultMode": "default",
+    // "additionalDirectories": ["~/projects"],
+    // "disableBypassPermissionsMode": "disable"
+  },
+  "skipDangerousModePermissionPrompt": true,
+  // "disableAutoMode": false,
+  // "respectGitignore": true,
+
+  // --- features / tools ---
+  "disableWorkflows": true,
+  "disableArtifact": true,
+  // "enableWorkflows": false,
+  // "enableArtifact": false,
+  // "disableAllHooks": true,
+  // "hooks": { "PostToolUse": [{ "matcher": "Edit|Write", "hooks": [{ "type": "command", "command": "echo Done" }] }] },
+  // "disableAgentView": true,
+  // "disableRemoteControl": true,
+  // "todoFeatureEnabled": false,
+  // "defaultShell": "bash",
+  // "respondToBashCommands": true,
+  // "skipWebFetchPreflight": false,
+
+  // --- skills / plugins / mcp ---
+  "disableBundledSkills": true,
+  "disableClaudeAiConnectors": true,
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true
+  },
+  // "disableSkillShellExecution": true,
+  // "syncClaudeAiSkills": false,
+  // "syncClaudeAiPlugins": false,
+  // "skillListingMaxDescChars": 1536,
+  // "skillListingBudgetFraction": 0.01,
+  // "extraKnownMarketplaces": {},
+  // "enableAllProjectMcpServers": false,
+  // "enabledMcpjsonServers": [],
+  // "disabledMcpjsonServers": [],
+
+  // --- context / memory ---
+  "autoMemoryEnabled": false,
+  // "autoMemoryDirectory": "~/.claude/memory",
+  // "autoDreamEnabled": false,
+  // "autoCompactEnabled": true,
+  // "autoCompactWindow": 200000,
+  // "precomputeCompactionEnabled": true,
+  // "outputStyle": "default",
+  // "plansDirectory": ".claude/plans",
+
+  // --- git ---
+  "includeGitInstructions": false,
+  // "includeCoAuthoredBy": true,
+  // "attribution": { "commit": "", "pr": "", "sessionUrl": false },
+
+  // --- ui / tui ---
+  "tui": "fullscreen",
+  "statusLine": {
+    "type": "command",
+    "command": "node /Users/benjamin/.claude/statusline.js",
+    "padding": 0
+    // "refreshInterval": 5,
+    // "hideVimModeIndicator": false
+  },
+  // "theme": "dark",
+  // "viewMode": "default",
+  // "editorMode": "normal",
+  // "verbose": false,
+  // "spinnerTipsEnabled": false,
+  // "tipsFile": "~/tips.json",
+  // "syntaxHighlightingDisabled": false,
+  // "showMessageTimestamps": false,
+  // "terminalProgressBarEnabled": true,
+  // "terminalTitleFromRename": true,
+  // "autoScrollEnabled": true,
+  // "wheelScrollAccelerationEnabled": true,
+  // "prefersReducedMotion": false,
+  // "emojiCompletionEnabled": false,
+  // "promptSuggestionEnabled": false,
+  // "awaySummaryEnabled": false,
+
+  // --- notifications / remote / teammates ---
+  // "preferredNotifChannel": "terminal_bell",
+  // "inputNeededNotifEnabled": false,
+  // "agentPushNotifEnabled": false,
+  // "remoteControlAtStartup": false,
+  // "autoUploadSessions": false,
+  // "isolatePeerMachines": true,
+  // "crossSessionInbound": "hold",
+  // "daemonColdStart": "transient",
+  // "teammateMode": "auto",
+  // "defaultEnvironmentId": "",
+
+  // --- session / files / updates ---
+  // "cleanupPeriodDays": 30,
+  // "fileCheckpointingEnabled": true,
+  // "autoUpdatesChannel": "stable",
+  // "feedbackSurveyRate": 0.05
+}

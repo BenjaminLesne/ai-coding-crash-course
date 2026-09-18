@@ -1,0 +1,5 @@
+label	control	total	delta
+keep_agent	11537	6287	-5250
+keep_agent_listagents	11537	6692	-4845
+keep_agent_env	11537	6287	-5250
+keep_nothing_extra	11537	6287	-5250

@@ -1,0 +1,80 @@
+{
+  "env": {
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
+    // "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": "1"
+  },
+
+  "disableClaudeAiConnectors": true,
+  "disableWorkflows": true,
+  "disableBundledSkills": true,
+  "disableArtifact": true,
+  "includeGitInstructions": false,
+  "autoMemoryEnabled": false,
+
+  "permissions": {
+    "deny": [
+      // "Bash",
+      // "Read",
+      // "Edit",
+      // "Write",
+      // "Glob",
+      // "Grep",
+      // "WebFetch",
+      // "WebSearch",
+      // "Skill",
+      // "REPL",
+      // "Agent",
+      // "ListAgents",
+      // "BashOutput",
+      // "KillShell",
+      // "Monitor",
+      // "Agent(claude)",
+      // "Agent(general-purpose)",
+      // "Agent(Explore)",
+      // "Agent(Plan)",
+      // "Agent(claude-code-guide)",
+      // "Agent(statusline-setup)",
+      "NotebookEdit",
+      "Task",
+      "TodoWrite",
+      "TaskCreate",
+      "TaskUpdate",
+      "TaskGet",
+      "TaskList",
+      "TaskStop",
+      "AskUserQuestion",
+      "SendUserMessage",
+      "ShareOnboardingGuide",
+      "Artifact",
+      "Workflow",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "DesignSync",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "PushNotification",
+      "RemoteTrigger",
+      "EnterPlanMode",
+      "ExitPlanMode",
+      "EnterWorktree",
+      "ExitWorktree",
+      "TaskOutput",
+      "SendMessage",
+      "EndConversation"
+    ]
+  },
+
+  "statusLine": {
+    "type": "command",
+    "command": "node /Users/benjamin/.claude/statusline.js",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "model": "opus[1m]",
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true
+}

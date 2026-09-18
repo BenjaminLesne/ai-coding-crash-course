@@ -1,0 +1,5 @@
+label	control	total	delta
+settings_barebones_agent	11496	6246	-5250
+settings_barebones_noagent	11496	6246	-5250
+settings_barebones_plus_skill	11496	7852	-3644
+settings_barebones_agent_plus_env	11496	11211	-285

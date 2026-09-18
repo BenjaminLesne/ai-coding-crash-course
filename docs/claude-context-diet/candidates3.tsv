@@ -1,0 +1,8 @@
+deny_empty	-	-	{"permissions":{"deny":[]}}
+deny_empty_plus_git	-	-	{"permissions":{"deny":[]},"includeGitInstructions":false}
+tools_min_plus_git	-	--tools "Bash,Read,Edit,Write,Agent"	{"includeGitInstructions":false}
+tools_practical	-	--tools "Bash,Read,Edit,Write,Agent,Skill,ToolSearch"	-
+tools_practical_glob	-	--tools "Bash,Read,Edit,Write,Agent,Skill,ToolSearch,Glob,Grep"	-
+COMBO_lean	CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS=1	--tools "Bash,Read,Edit,Write,Agent" --exclude-dynamic-system-prompt-sections	{"permissions":{"deny":[]},"includeGitInstructions":false}
+COMBO_lean_practical	CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS=1	--tools "Bash,Read,Edit,Write,Agent,Skill,ToolSearch" --exclude-dynamic-system-prompt-sections	{"permissions":{"deny":[]},"includeGitInstructions":false}
+COMBO_max	CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS=1	--tools "" --exclude-dynamic-system-prompt-sections	{"permissions":{"deny":[]},"includeGitInstructions":false}
